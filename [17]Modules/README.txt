@@ -1,108 +1,133 @@
-[17] MODULES
+A Python module is a file or library that contains code, functions, and tools that we can use in a program.
 
-A Python module is a file or library that contains code we can use in a program.
-Modules help us add features without writing everything ourselves.
+Modules help us add features to our programs without writing everything ourselves. They make coding easier, more organized, and more efficient.
 
-This folder documents the three modules used in the Speed Typing Test:
-1. Faker
-2. Time
-3. Statistics
+This folder documents the three Python modules used in the Student Grade Calculator:
 
-----------------------------------------
-1. FAKER MODULE
-----------------------------------------
+1. Math
+2. Datetime
+3. String
+
+1. MATH MODULE
 
 Purpose:
-Faker is an external Python library that generates fake but realistic data.
 
-How it is used in the Speed Typing Test:
-Faker generates a sentence for the player to type. The number of words changes
-depending on the selected difficulty.
+Math is a built-in Python module used for mathematical calculations. It provides different functions that help us perform mathematical operations easily.
+
+How it is used in the Student Grade Calculator:
+
+The Math module calculates the square root of the student's average grade. It uses the `math.sqrt()` function to get the square root of a given number.
 
 Code:
-    import faker
 
-    fake = faker.Faker()
-    sentence = fake.sentence(nb_words=6)
+```
+import mathaverage = 90square_root = math.sqrt(average)print("Square Root:", round(square_root, 2))
+```
 
 Explanation:
-- import faker loads the Faker library.
-- faker.Faker() creates a Faker object.
-- fake.sentence() generates a sentence.
-- nb_words sets the approximate number of words in the sentence.
+
+- `import math` loads the Math module into the program.
+- `math.sqrt()` calculates the square root of a number.
+- `average` stores the student's average grade.
+- `square_root` stores the calculated square root.
+- `round(square_root, 2)` rounds the result to two decimal places.
+
+Example:
+
+If the student's average grade is 90, the square root will be approximately 9.49.
 
 Other uses:
-Faker can generate sample names, email addresses, phone numbers, dates,
-addresses, and other kinds of test data.
+
+The Math module can also calculate powers, factorials, absolute values, and other mathematical operations using functions such as `math.pow()`, `math.factorial()`, and `math.fabs()`.
 
 Installation:
-    pip install faker
 
-----------------------------------------
-2. TIME MODULE
-----------------------------------------
+No installation is needed. The Math module is included with Python.
+
+2. DATETIME MODULE
 
 Purpose:
-Time is a built-in Python module used for time-related operations.
 
-How it is used in the Speed Typing Test:
-It records when the player starts and finishes typing. The program subtracts
-the starting time from the ending time to calculate how many seconds were used.
+Datetime is a built-in Python module used for working with dates and time. It allows programs to get, display, and manage the current date and time.
+
+How it is used in the Student Grade Calculator:
+
+The Datetime module gets the current date from the computer and displays it in the Student Grade Report. This allows the program to automatically show the date when the report is generated.
 
 Code:
-    import time
 
-    start = time.time()
-    # The player types here
-    end = time.time()
-
-    elapsed = end - start
+```
+import datetimetoday = datetime.date.today()print("Date:", today)
+```
 
 Explanation:
-- time.time() returns the current time as a timestamp.
-- start stores the time before typing.
-- end stores the time after typing.
-- elapsed stores the total time taken.
+
+- `import datetime` loads the Datetime module into the program.
+- `datetime.date.today()` gets the current date from the computer.
+- `today` stores the current date.
+- `print()` displays the date on the screen.
+
+Example:
+
+If the program is executed on November 20, 2026, it will display:
+
+```
+Date: 2026-11-20
+```
 
 Other uses:
-The time module can also create delays with time.sleep(), work with timestamps,
-and measure how long parts of a program take to run.
+
+The Datetime module can also display the current time, calculate the difference between two dates, format dates, and work with specific days, months, and years.
 
 Installation:
-No installation is needed. The time module is included with Python.
 
-----------------------------------------
-3. STATISTICS MODULE
-----------------------------------------
+No installation is needed. The Datetime module is included with Python.
+
+3. STRING MODULE
 
 Purpose:
-Statistics is a built-in Python module used for statistical calculations.
 
-How it is used in the Speed Typing Test:
-It calculates the average WPM from the scores saved during the current session.
+String is a built-in Python module used for working with text and characters. It provides different tools and predefined character sets that can be used in a program.
+
+How it is used in the Student Grade Calculator:
+
+The String module displays all uppercase letters from A to Z using `string.ascii_uppercase`. This demonstrates how Python can access and display a complete set of alphabetic characters.
 
 Code:
-    import statistics
 
-    scores = [30, 40, 50]
-    average = statistics.mean(scores)
+```
+import stringletters = string.ascii_uppercaseprint("Alphabet:", letters)
+```
 
 Explanation:
-- statistics.mean() calculates the arithmetic average.
-- It adds the values and divides their total by the number of values.
-- In this example, the average is 40 WPM.
+
+- `import string` loads the String module into the program.
+- `string.ascii_uppercase` provides all uppercase English letters from A to Z.
+- `letters` stores the uppercase alphabet.
+- `print()` displays all the letters on the screen.
+
+Example:
+
+The program will display:
+
+```
+Alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+```
 
 Other uses:
-The module also provides functions for finding the median, mode, and standard
-deviation of numerical data.
+
+The String module can also provide lowercase letters using `string.ascii_lowercase`, numbers using `string.digits`, and punctuation marks using `string.punctuation`.
 
 Installation:
-No installation is needed. The statistics module is included with Python.
 
-----------------------------------------
-SUMMARY
-----------------------------------------
+No installation is needed. The String module is included with Python.
 
-Faker      - Generates the sentences used in the typing test.
-Time       - Measures how long the player takes to type.
-Statistics - Calculates the average WPM from the saved scores.
+------------
+ SUMMARY
+------------
+The Student Grade Calculator uses three built-in Python modules, and each module has its own purpose.
+
+
+Math - Calculates the square root of the student's average grade. 
+Datetime - Gets and displays the current date.                        
+String - Provides uppercase letters from A to Z.                   
